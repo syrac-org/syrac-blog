@@ -4,12 +4,14 @@ title: Announcing Syrac
 summary: A paragliding time attack platform.
 tags:
   - updates
-cover: interlaken_t3.png
+cover: banner.png
 ---
 
 ## TL;DR
 
 Head to [app.syrac.org](https://app.syrac.org), complete tasks you like, and see how high you can climb on the leaderboards.
+
+{{< image src="interlaken_t3.png" alt="Syrac task map screenshot" position="center" style="border-radius: 4px;" >}}
 
 ## Permanent tasks are great
 
