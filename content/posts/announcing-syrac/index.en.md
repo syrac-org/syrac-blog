@@ -3,9 +3,7 @@ date: 2025-07-11T18:30:00+02:00
 title: Announcing Syrac
 summary: A paragliding time attack platform.
 tags:
-  - syrac
-  - paragliding
-  - software
+  - updates
 cover: interlaken_t3.png
 ---
 
@@ -51,7 +49,7 @@ There are still rough edges—the most obvious being that we're in 2025 and ther
 
 For now, the least annoying workflow might be to:
 
-* Design the route in [flyXC](https://flyxc.app/)
+* Design the route in [flyXC](https://flyxc.app/) (or directly in XCTrack if you're adventurous)
 * Export it in XCTrack format
 * Set the task type and turnpoint radii in [XCTrack](https://xctrack.org/)
 * Export it and upload to Syrac
