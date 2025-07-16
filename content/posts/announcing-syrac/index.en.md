@@ -9,11 +9,11 @@ tags:
 cover: interlaken_t3.png
 ---
 
-# TL;DR
+## TL;DR
 
 Head to [app.syrac.org](https://app.syrac.org), complete tasks you like, and see how high you can climb on the leaderboards.
 
-# Permanent tasks are great
+## Permanent tasks are great
 
 I've always loved the idea of permanent paragliding tasks.
 You complete them just like during regular paragliding competitions, except you can retry them as many times as you want.
@@ -26,14 +26,14 @@ But I believe permanent tasks offer something equally valuable: the ability to t
 
 If you want to know more about the philosophy behind permanent tasks, read the [manifesto](https://docs.syrac.org/manifesto).
 
-# The problem
+## The problem
 
 Until now, permanent tasks were kind of a niche concept.
 Some well-known flying sites run their local tasks, but they're hard to discover unless you're a local pilot or know exactly where to look.
 
 There's no place to find interesting tasks or compare your times with pilots worldwide.
 
-# Introducing Syrac
+## Introducing Syrac
 
 That's why I've been building [Syrac](https://app.syrac.org), a platform where you can:
 
@@ -45,7 +45,7 @@ The [rules](https://docs.syrac.org/rules) explain in more detail how to particip
 
 {{< image src="explore_map.png" alt="Syrac explore map screenshot" position="center" style="border-radius: 4px;" >}}
 
-# What's next
+## What's next
 
 There are still rough edges—the most obvious being that we're in 2025 and there's still no easy way to actually build a task from scratch!
 
@@ -60,7 +60,7 @@ You can also use [TaskCreator](https://www.vololiberomontecucco.it/taskcreator/)
 
 A built-in task builder with a nice UI is on the roadmap, but I wanted to get Syrac out in the open now that the core features are ready.
 
-# Get involved
+## Get involved
 
 Whether you're looking to challenge yourself on existing tasks or share your favorite local routes with the global community, Syrac is built for you.
 
