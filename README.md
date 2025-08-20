@@ -3,7 +3,7 @@
 * Serve locally
 
 ```console
-hugo server --buildDrafts
+hugo server --buildDrafts --buildFuture
 ```
 
 * Create new post
