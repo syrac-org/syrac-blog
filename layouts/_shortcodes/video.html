@@ -1,0 +1,43 @@
+{{- $u := urls.Parse (.Get "src") -}}
+{{- $src := $u.String -}}
+{{- if not $u.IsAbs -}}
+  {{- with or (.Page.Resources.Get $u.Path) (resources.Get $u.Path) -}}
+    {{- $src = .RelPermalink -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $poster := .Get "poster" -}}
+{{- $controls := .Get "controls" -}}
+{{- $autoplay := .Get "autoplay" -}}
+{{- $muted := .Get "muted" -}}
+{{- $loop := .Get "loop" -}}
+{{- $width := .Get "width" -}}
+{{- $height := .Get "height" -}}
+{{- $class := .Get "class" -}}
+{{- $id := .Get "id" -}}
+{{- $preload := .Get "preload" -}}
+{{- $caption := .Get "caption" -}}
+{{- $playsinline := .Get "playsinline" -}}
+
+{{- if not $src -}}
+  {{- errorf "Video shortcode requires a 'src' parameter" -}}
+{{- end -}}
+
+<video
+  {{- with $width }} width="{{ . }}"{{ end }}
+  {{- with $height }} height="{{ . }}"{{ end }}
+  {{- with $class }} class="{{ . }}"{{ end }}
+  {{- with $id }} id="{{ . }}"{{ end }}
+  {{- if eq $controls "true" }} controls{{ end }}
+  {{- if eq $autoplay "true" }} autoplay{{ end }}
+  {{- if eq $muted "true" }} muted{{ end }}
+  {{- if eq $loop "true" }} loop{{ end }}
+  {{- if eq $playsinline "true" }} playsinline{{ end }}
+  {{- with $poster }} poster="{{ . | relURL }}"{{ end }}
+  {{- with $preload }} preload="{{ . }}"{{ else }} preload="metadata"{{ end }}
+  {{- with $caption }} aria-label="{{ . }}"{{ end }}
+>
+  <source src="{{ $src | relURL }}" type="video/mp4">
+  
+  <p>Your browser doesn't support HTML video. Here is a <a href="{{ $src | relURL }}">link to the video</a> instead.</p>
+</video>
