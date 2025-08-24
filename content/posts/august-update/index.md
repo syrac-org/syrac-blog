@@ -1,12 +1,11 @@
 ---
-date: 2025-08-20T18:30:00+02:00
-draft: true
+date: 2025-08-24T17:30:00+02:00
 title: August update
 summary: One month of Syrac.
 katex: true
 tags:
   - updates
-cover: banner.png
+cover: task_clusters.png
 ---
 
 It's been a month since Syrac was released, and there was a lot of positive feedback and [discussions](https://github.com/orgs/syrac-org/discussions?discussions_q=+).
@@ -15,9 +14,11 @@ Here is a short summary of the updates since the initial release:
 
 ## Glider categories
 
-Glider categories are now displayed in the task leaderboard, and need to be declared when submitting tracks.
+Glider categories are now displayed in task leaderboards, and need to be declared when submitting tracks.
 
 {{< image src="glider_categories.png" alt="Glider category in track submission form" position="center" style="border-radius: 4px;" width="300" >}}
+
+The addition of glider brands and models are coming in the next few weeks, check the [roadmap](https://github.com/orgs/syrac-org/projects/5) to stay up-to-date with the upcoming features.
 
 ## Completion speed
 
@@ -29,13 +30,19 @@ Since the speed section distance $d_{SS}$ can be significantly shorter than the 
 
 ## Task clusters
 
-The explore map is now less empty by displaying clusters of tasks in view.
+The explore map now appears less empty since clusters of tasks in view are now displayed.
 
 {{< image src="task_clusters.png" alt="Task clusters in explore map" position="center" style="border-radius: 4px;" >}}
 
-Once the map is zoomed-in enough to resolve individual tasks, you can click on it to display a popup with a link to the leaderboard page.
+Once the map is zoomed-in enough to resolve individual task locations, you can click on them to display a popup with a link to the leaderboard page.
 
 {{< image src="map_popup.png" alt="Task popup in explore map" position="center" style="border-radius: 4px;" >}}
+
+For now, the task location is computed as the barycenter of the optimized route. I'm not very satsified with this approach but I think the alternatives are worse:
+
+* **takeoff**: Takeoff turnpoints are not used for navigation, and are optional in the task definition. Also, single task can be completed by taking off from different locations.
+* **start of speed section**: Using the center of the SSS does not make sense because a large start radius can be used on a small local task, making it appear far from the actual task location. Using the intersection of the optimized route with the SSS would make more sense, but I don't think it more accurately represents the task location than the barycenter of the complete optimized route. 
+* **goal**: Same issues as with the SSS.
 
 ## Persistent map state
 
