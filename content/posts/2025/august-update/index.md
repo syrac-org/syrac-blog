@@ -6,6 +6,8 @@ katex: true
 tags:
   - updates
 cover: task_clusters.png
+aliases:
+  - august-update
 ---
 
 It's been a month since Syrac was released, and there was a lot of positive feedback and [discussions](https://github.com/orgs/syrac-org/discussions?discussions_q=+).
