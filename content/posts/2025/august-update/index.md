@@ -1,6 +1,6 @@
 ---
 date: 2025-08-24T17:30:00+02:00
-title: August update
+title: 2025 August update
 summary: One month of Syrac.
 katex: true
 tags:
