@@ -25,6 +25,11 @@ languages:
     languageName: English
     subtitle: ""
     keywords: ""
+    menu:
+      main:
+        - identifier: "app"
+          name: "Go to app"
+          url: "https://app.syrac.org"
     params:
       readOtherPosts: Read other posts
       menuMore: Show more
