@@ -16,6 +16,7 @@ params:
   showLanguageSelector: false
   contentTypeName: posts
   footerText: paragliding time attack
+  appUrl: https://app.syrac.org
   logo:
     logoText: Syrac
     logoHomeLink: /
@@ -25,11 +26,6 @@ languages:
     languageName: English
     subtitle: ""
     keywords: ""
-    menu:
-      main:
-        - identifier: "app"
-          name: "Go to app"
-          url: "https://app.syrac.org"
     params:
       readOtherPosts: Read other posts
       menuMore: Show more
