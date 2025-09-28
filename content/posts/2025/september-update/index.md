@@ -1,6 +1,5 @@
 ---
-date: 2025-09-02T19:36:43+02:00
-draft: true
+date: 2025-09-29T17:30:00+02:00
 title: 2025 September Update
 summary: A brand-new task editor, user profiles, leaderboard improvements, and more.
 cover: task_editor.png
