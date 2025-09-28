@@ -10,7 +10,7 @@ tags:
 ## Task editor
 
 Create and edit tasks easily using [Syrac's new built-in task editor](https://app.syrac.org/task/editor).
-You can create and edit tasks without a waypoint file, and the editor works on both desktop and mobile devices.
+You don't need a waypoint file to get started, and the editor works on both desktop and mobile devices.
 
 {{< raw >}}
 <div style="display: flex; width: 100%; height: 500px; flex-direction: column;">
