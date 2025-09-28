@@ -11,7 +11,7 @@ tags:
 ## Task editor
 
 Create and edit tasks easily using [Syrac's new built-in task editor](https://app.syrac.org/task/editor).
-It supports creating and editing tasks without requiring a waypoint file, and works on both desktop and mobile devices.
+You can create and edit tasks without a waypoint file, and the editor works on both desktop and mobile devices.
 
 {{< raw >}}
 <div style="display: flex; width: 100%; height: 500px; flex-direction: column;">
@@ -21,7 +21,7 @@ It supports creating and editing tasks without requiring a waypoint file, and wo
 
 ## User profiles
 
-See your and your friends achievements by checking their profile page.
+See your own and your friends' achievements by checking their profile pages.
 
 Profiles include basic user stats:
 
@@ -29,11 +29,11 @@ Profiles include basic user stats:
 - number of tasks completed
 - number of overall completions on created tasks ("reach")
 
-as well as a feed of latest activities.
+as well as a feed of recent activities.
 
 ## Social media sharing
 
-You can now more easily share your tasks completions on social media using a transparent image, which can be copied from your profile.
+You can now more easily share your task completions on social media using a transparent image, which can be copied from your profile.
 
 {{< image src="social_share.png" alt="Sharing task completions on social media" position="center" style="border-radius: 4px;" >}}
 
@@ -43,11 +43,11 @@ You can now more easily share your tasks completions on social media using a tra
 ### Track signature validation
 
 To encourage transparency, task leaderboards now include an icon indicating whether the track signature is valid.
-This does not prevent all forms of cheating, but at least dissuades pilots from manually modifying their tracks.
+This doesn't prevent all forms of cheating, but it discourages pilots from manually modifying their tracks.
 
 ### Multiple completions
 
-Next to the track signature icon, another badge indicates the number of completions for pilots having completed the task more than once.
+Next to the track signature icon, another badge indicates the number of completions for pilots who have completed the task more than once.
 
 ### Glider models
 
@@ -55,7 +55,7 @@ Leaderboards now include the glider model, which needs to be declared when submi
 
 ### Category filter
 
-Finally, leaderboards can be filtered by category, enabling clubs to create Sport and Serial rankings if they wish to.
+Leaderboards can now be filtered by category, enabling clubs to create Sport and Serial rankings if they wish.
 
 {{< image src="task_leaderboard.png" alt="Track signature and number of attempts in leaderboard" position="center" style="border-radius: 4px;" >}}
 
