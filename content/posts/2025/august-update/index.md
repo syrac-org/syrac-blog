@@ -43,7 +43,7 @@ Once the map is zoomed-in enough to resolve individual task locations, you can c
 For now, the task location is computed as the barycenter of the optimized route. I'm not very satsified with this approach but I think the alternatives are worse:
 
 * **takeoff**: Takeoff turnpoints are not used for navigation, and are optional in the task definition. Also, single task can be completed by taking off from different locations.
-* **start of speed section**: Using the center of the SSS does not make sense because a large start radius can be used on a small local task, making it appear far from the actual task location. Using the intersection of the optimized route with the SSS would make more sense, but I don't think it more accurately represents the task location than the barycenter of the complete optimized route. 
+* **start of speed section**: Using the center of the SSS does not make sense because a large start radius can be used on a small local task, making it appear far from the actual task location. Using the intersection of the optimized route with the SSS would make more sense, but I don't think it more accurately represents the task location than the barycenter of the complete optimized route.
 * **goal**: Same issues as with the SSS.
 
 ## Persistent map state
