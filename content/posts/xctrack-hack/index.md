@@ -55,6 +55,22 @@ So, how do they work ?
 
 ## Public-key cryptography
 
+If you're already familiar with hashing and public-key cryptography concepts, you can skip to the [next section](#igc-digital-signature).
+Otherwise, this section briefly explains the two core concepts required to understand the underlying mechanics of how track signatures work.
+
+### Hashing
+
+For the purposes of this post, you can think of a hash as a short identifier of the file contents, similar to a fingerprint.
+Any change to the file contents changes the hash.
+
+### Digital signing
+
+A digital signature is a way to to verify the authenticity of a piece of data.
+This process requires a pair of keys: a private key, **which should be secret and only known to the signer**, and a public key, which can be shared with anyone.
+
+First, the private key is used to sign a piece of data, creating a digital signature.
+Then, anyone with the public key can verify that this signature is legit, confirming that the data comes from the signer.
+
 ## IGC digital signature
 
 ## The hack
