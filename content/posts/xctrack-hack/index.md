@@ -35,21 +35,21 @@ This is what most flight recorders are configured to write, and what Syrac uses 
 IGC files are plain text files containing timestamped coordinates, along with other flight metadata.
 The first character of each line indicates the type of record stored in that line:
 
-- H: header records storing metadata such as date, pilot name and glider model
-- B: fix records storing coordinates of the flight
-- G: security record storing the digital track signature
+- `H`: header records storing metadata such as date, pilot name and glider model
+- `B`: fix records storing coordinates of the flight
+- `G`: security record storing the digital track signature
 - [a lot of other record types](https://xp-soaring.github.io/igc_file_format/igc_format_2008.html), which are not relevant to this post
 
-You can modify such text files simply by opening them in a file editor, so what's preventing malicious users from cheating online contests by crafting arbitrary tracklogs ?
+You can modify a text file simply by opening it in a file editor, so what's preventing malicious users from cheating online contests by crafting arbitrary tracklogs ?
 
 One could argue that doing so would be pointless, because paragliding remains an amateur sport where the incentives to cheat are relatively low.
-Although true, it's safe to assume that as soon as there is a leaderboard, [someone is going to try to rig it](https://web.archive.org/web/20250714025458/https://xcmag.com/news/comps-and-events/xcontest-bans-pilot-for-faking-tracklogs), even if the motivations to do so are not entirely clear.
+Even if this is somewhat true, it's safe to assume that as soon as there is a leaderboard, [someone is going to try to rig it](https://web.archive.org/web/20250714025458/https://xcmag.com/news/comps-and-events/xcontest-bans-pilot-for-faking-tracklogs), even if the motivations to do so are not entirely clear.
 
 This brings me to my main point:
 
 > For Syrac to be a trusted platform, it needs promote transparency in its leaderboards.
 
-And digital track signatures are one of the most efficient ways to encourage this transparency.
+And digital track signatures is one way to encourage this transparency.
 
 So, how do they work ?
 
