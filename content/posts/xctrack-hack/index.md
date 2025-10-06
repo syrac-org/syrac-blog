@@ -102,7 +102,7 @@ When I started thinking about Syrac back in 2020, I wondered:
 > If XCTrack is able to create valid signatures directly from my phone, that means the private key is somewhere inside the application.
 > How hard would it be to find it, and reverse-engineer the signature process to craft valid tracks ?
 
-So I decompiled the application using [`apktool`](https://apktool.org/), and started looking for clues.
+So I decompiled the APK installed on my phone using [`apktool`](https://apktool.org/), and started looking for clues.
 The app bytecode is decompiled to `.smali` files, which is an assembly-like language for Android.
 It's not very readable, so I transpiled it to Java — which is not much more readable, but at least I understood what I was looking at.
 
