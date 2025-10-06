@@ -248,7 +248,7 @@ I find it strange that all the mitigation techniques suggested in this specifica
 
 ## Other hacking techniques
 
-Even if a flight recorder implemented ideal hardware security, it would still miss the elephant in the room: the reliance on GPS to receive positioning data, which is not authenticated.
+Even if a flight recorder implemented ideal hardware security, it would still miss the elephant in the room: the reliance on [GPS](https://ciechanow.ski/gps/) to receive positioning data, which is not authenticated.
 
 For a couple hundred bucks, you can [buy a a software-defined radio](https://greatscottgadgets.com/hackrf/) and simulate GPS signals.
 This allows you to craft entire tracklogs while being nearly undetectable, which is much easier to carry out than reverse-engineering using hardware probes.
