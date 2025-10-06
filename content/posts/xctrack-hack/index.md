@@ -55,7 +55,7 @@ So, how do they work ?
 
 ## Public-key cryptography
 
-If you're already familiar with hashing and public-key cryptography concepts, you can skip to the [next section](#igc-digital-signature).
+If you're already familiar with hashing and public-key cryptography concepts, you can skip to the [next section](#in-practice).
 Otherwise, this section briefly explains the two core concepts required to understand the underlying mechanics of how track signatures work.
 
 ### Hashing
