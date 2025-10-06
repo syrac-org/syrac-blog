@@ -80,6 +80,22 @@ To check the validity of a signature, the flight recorder public key can be used
 
 {{< image src="digital_signature.png" alt="Digital signature workflow" position="center" style="border-radius: 4px;" >}}
 
+This whole process relies on the impossiblity for someone without access to the private key to create a valid signature.
+
 ## The hack
+
+So, if the private key is supposed to be a secret, how is the signature of the following (doubtful) IGC file valid ?
+
+```text
+AXCT XCTrack
+So long, and thanks for all the fish.
+G3C9D43B54B7BB763AD8201A6C044500B4F90E2768E36DA06CEFC283F59DB8556
+G0AC71E4A6F120E4CD925A4B7BFDFD06968DDBE96D0C1224A07398FC4285C5861
+G30430FA72EAB9F3BCD5AFE853D7C8006FF50EDAA18DDF96E28CA81B67B7F61EB
+GEB1239B4545CA16002EE843F57C6BD970702994C2FDEBC4FBD5A00D03C0B7AE7
+```
+
+You can verify its validity on your own by uploading [the IGC file](./hacked.igc) to the [FAI Open Validation Server](http://vali.fai-civl.org/validation.html).
+
 
 ## Spoofing GPS signals
