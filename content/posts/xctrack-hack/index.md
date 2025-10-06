@@ -60,18 +60,25 @@ Otherwise, this section briefly explains the two core concepts required to under
 
 ### Hashing
 
-For the purposes of this post, you can think of a hash as a short identifier of the file contents, similar to a fingerprint.
+For the purposes of this post, you can think of a [hash](https://en.wikipedia.org/wiki/Hash_function) as a short identifier of the file contents, similar to a fingerprint.
 Any change to the file contents changes the hash.
 
-### Digital signing
+### Digital signature
 
-A digital signature is a way to to verify the authenticity of a piece of data.
+A [digital signature](https://en.wikipedia.org/wiki/Digital_signature) is a way to to verify the authenticity of a piece of data.
 This process requires a pair of keys: a private key, **which should be secret and only known to the signer**, and a public key, which can be shared with anyone.
 
-First, the private key is used to sign a piece of data, creating a digital signature.
-Then, anyone with the public key can verify that this signature is legit, confirming that the data comes from the signer.
+First, the private key is used to sign a piece of data by encrypting it, creating a digital signature.
+Then, anyone with the public key can decrypt the signature, confirming that the data comes from the signer and hasn't been tampered with.
 
-## IGC digital signature
+## In practice
+
+Once you land, your flight recorder computes a hash of the IGC file contents, and signs it with its private key.
+This signature is appended to the IGC file using `G` records.
+
+To check the validity of a signature, the flight recorder public key can be used to decrypt the encrypted hash, and checking that it matches the hash of the original file contents.
+
+{{< image src="digital_signature.png" alt="Digital signature workflow" position="center" style="border-radius: 4px;" >}}
 
 ## The hack
 
