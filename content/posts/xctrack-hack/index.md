@@ -219,4 +219,29 @@ XContest team
 </details>
 {{< /raw >}}
 
-## Spoofing GPS signals
+And that was it.
+The key was never revoked, and I get it — it would be a mess and it's not worth the trouble, since I'm not going to publish it anywhere.
+
+## Other manufacturers
+
+I want to make it clear that the purpose of this post **is not** to publicly shame XCTrack, on the contrary I think what they're doing is great.
+The app is useful, the stability of their [open task specification](https://xctrack.org/Competition_Interfaces.html) is a great testament to their good design choices, and the livetracking features have greatly improved the safety of our sport.
+On top of that, they provided these services to pilots around the world for free, with only minimal ads.
+
+I only hacked it because it was the flight recorder I always used.
+
+In theory, all flight recorder manufacturers are affected by this kind of issue, they're just less easily hacked because they control the hardware, as opposed to XCTrack which only ships software to users' devices.
+
+The [IGC specification](https://www.fai.org/sites/default/files/igc_specification_dec_2024_with_al9.pdf) describe with excruciating detail the security procedures manufacturers should follow to get their flight recorders approved by the FAI.
+
+Some of the best extracts include:
+
+> Unless the construction of the recorder case is permanently sealed [...], the case must have a tamper-proof physical seal across at least two joints or screws, so that the seal will be broken if the case is opened. The type of seal [...] must have markings unique to the recorder that are difficult to replicate. Seals with holographic symbols are preferred.
+
+> It must not be possible to access the security algorithms by dis-assembly of the flight recorder, for instance through an EPROM reader.
+
+> If a flight recorder is opened or otherwise interfered with either physically or electronically, a mechanism must exist so that any subsequent data from that flight recorder will be detected as not having the correct Digital Signature. This shall be achieved by a system that operates if the flight recorder case is interfered with and deletes the encryption key(s) required to compute a valid digital signature, such as through a microswitch, or equivalent system [...].
+
+> The security mechanism [...] must be protected from any interference from outside, such as an attempt to prevent the mechanism from operating while the flight-recorder case is opened such as by inserting a physical probe or tool through ventilation holes, through a partially-removed case cover, or through a gap in a slightly-opened case.
+
+## Other hacking techniques
