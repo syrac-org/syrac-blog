@@ -3,6 +3,7 @@ date: 2025-10-04T00:37:23+02:00
 draft: true
 title: The Day I Hacked XCTrack
 summary: A tale of trust and public-key cryptography.
+cover: digital_signature_inverted.png
 tags:
   - dev
 ---
@@ -78,7 +79,14 @@ This signature is appended to the IGC file using `G` records.
 
 To check the validity of a signature, the flight recorder public key can be used to decrypt the encrypted hash, and checking that it matches the hash of the original file contents.
 
-{{< image src="digital_signature.png" alt="Digital signature workflow" position="center" style="border-radius: 4px;" >}}
+{{< figure
+    src="digital_signature_inverted.png"
+    alt="Digital signature workflow"
+    position="center"
+    style="border-radius: 4px;"
+    caption="Signing (top) and verification (bottom) workflows"
+    link="https://techterms.com/definition/digitalsignature"
+}}
 
 This whole process relies on the computational infeasibility for someone without access to the private key to create a valid signature.
 
