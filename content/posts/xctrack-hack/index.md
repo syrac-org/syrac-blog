@@ -86,7 +86,7 @@ To check the validity of a signature, the flight recorder public key can be used
     style="border-radius: 4px;"
     caption="Signing (top) and verification (bottom) workflows"
     link="https://techterms.com/definition/digitalsignature"
-}}
+>}}
 
 This whole process relies on the computational infeasibility for someone without access to the private key to create a valid signature.
 
