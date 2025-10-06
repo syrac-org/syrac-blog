@@ -97,5 +97,126 @@ GEB1239B4545CA16002EE843F57C6BD970702994C2FDEBC4FBD5A00D03C0B7AE7
 
 You can verify its validity on your own by uploading [the IGC file](./hacked.igc) to the [FAI Open Validation Server](http://vali.fai-civl.org/validation.html).
 
+When I started thinking about Syrac back in 2020, I wondered:
+
+> If XCTrack is able to create valid signatures directly from my phone, that means the private key is somewhere inside the application.
+> How hard would it be to find it, and reverse-engineer the signature process to craft valid tracks ?
+
+So I decompiled the application using [`apktool`](https://apktool.org/), and started looking for clues.
+The app bytecode is decompiled to `.smali` files, which is an assembly-like language for Android.
+It's not very readable, so I transpiled it to Java — which is not much more readable, but at least I understood what I was looking at.
+
+From this point, it was a reverse-engineering game of figuring out how tracklogs were written, and how security records were appended to it.
+
+Even if function and variable names were obfuscated, the Java classes were not and were pretty much self-explanatory.
+As soon as I found some `public class TracklogWriter` and a `private RSAPrivateKey`, I was confident I was on the right track.
+
+A couple hours later, I had extracted the private key and built a proof-of-concept to sign arbitrary IGC files.
+
+I contacted XCTrack developers about this issue, and they promptly implemented a more thorough obfuscation of the private key.
+
+{{< raw >}}
+<details>
+<summary>E-mail thread</summary>
+{{< /raw >}}
+
+```text
+┌──────────────────────────────────────────┐
+│ From: Téo Bouvard <teobouvard@gmail.com> │
+│ To: XCTRACK <xctrack@xcontest.org>       │
+│ Date: Mon, 16 Nov 2020 11:18:00 +0100    │
+│ Subject: XCTrack security issue          │
+└──────────────────────────────────────────┘
+
+Hi,
+
+I recently noticed the private key used for signing G records can be easily
+retrieved from the XCTrack apk. This would allow someone to submit crafted
+IGC tracks as being legitimate during competitions, XC contests or even
+FAI-sanctioned records. Although I understand this risk is inherent to
+device-based signing schemes as the private key must reside inside the
+device, do you consider this an "acceptable risk" or is this a security
+issue you would be willing to work on?
+
+You can find attached a crafted track passing validation to prove this claim.
+
+Sincerely,
+Téo Bouvard
+
+[Attachment: crafted_signed.igc (1K)]
+
+┌────────────────────────────────────────┐
+│ From: XCTRACK <xctrack@xcontest.org>   │
+│ To: Téo Bouvard <teobouvard@gmail.com> │
+│ Date: Mon, 16 Nov 2020 14:20:00 +0100  │
+│ Subject: Re: XCTrack security issue    │
+└────────────────────────────────────────┘
+
+Hi Teo,
+
+thanks for pointing this out. We're aware of this issue from the beginning
+of the XCTrack. But you're right, nowadays it's easier to dig the key out.
+It's impossible to completely hide the key from a determined expert, but
+I'll try to hide the key a little bit better.
+
+Best regards
+XContest team
+
+┌────────────────────────────────────────┐
+│ From: XCTRACK <xctrack@xcontest.org>   │
+│ To: Téo Bouvard <teobouvard@gmail.com> │
+│ Date: Mon, 23 Nov 2020 12:31:00 +0100  │
+│ Subject: Re: XCTrack security issue    │
+└────────────────────────────────────────┘
+
+Hi Téo,
+
+could you please take a look at this apk?
+
+Should be harder to dig the key out.
+
+Please let me know your thoughts. Thank you!
+
+Best regards
+XContest team
+
+[Attachment: crafted_signed.apk (13.3M)]
+
+┌──────────────────────────────────────────┐
+│ From: Téo Bouvard <teobouvard@gmail.com> │
+│ To: XCTRACK <xctrack@xcontest.org>       │
+│ Date: Mon, 23 Nov 2020 18:23:00 +0100    │
+│ Subject: Re: XCTrack security issue      │
+└──────────────────────────────────────────┘
+
+Hi ****,
+
+At first sight, this seems a reasonable fix. I think the effort needed to
+retrieve the key in this apk can dissuade casual cheating.
+
+Thank you for acting quickly on this.
+
+Cheers,
+Téo
+
+┌────────────────────────────────────────┐
+│ From: XCTRACK <xctrack@xcontest.org>   │
+│ To: Téo Bouvard <teobouvard@gmail.com> │
+│ Date: Tue, 24 Nov 2020 11:27:00 +0100  │
+│ Subject: Re: XCTrack security issue    │
+└────────────────────────────────────────┘
+
+Hi Teo,
+
+great, thanks! (And for pointing this out too.) Next versions will be
+released like this.
+
+Cheers
+XContest team
+```
+
+{{< raw >}}
+</details>
+{{< /raw >}}
 
 ## Spoofing GPS signals
