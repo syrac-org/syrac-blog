@@ -65,11 +65,11 @@ Any change to the file contents changes the hash.
 
 ### Digital signature
 
-A [digital signature](https://en.wikipedia.org/wiki/Digital_signature) is a way to to verify the authenticity of a piece of data.
+A [digital signature](https://en.wikipedia.org/wiki/Digital_signature) is a way to verify the authenticity of a piece of data.
 This process requires a pair of keys: a private key, **which should be secret and only known to the signer**, and a public key, which can be shared with anyone.
 
-First, the private key is used to sign a piece of data by encrypting it, creating a digital signature.
-Then, anyone with the public key can decrypt the signature, confirming that the data comes from the signer and hasn't been tampered with.
+First, the private key is used to sign a piece of data, creating a digital signature.
+Then, anyone with the public key can verify the signature, confirming that the data comes from the signer and hasn't been tampered with.
 
 ## In practice
 
@@ -80,7 +80,7 @@ To check the validity of a signature, the flight recorder public key can be used
 
 {{< image src="digital_signature.png" alt="Digital signature workflow" position="center" style="border-radius: 4px;" >}}
 
-This whole process relies on the impossiblity for someone without access to the private key to create a valid signature.
+This whole process relies on the computational infeasibility for someone without access to the private key to create a valid signature.
 
 ## The hack
 
@@ -260,3 +260,7 @@ After all, we're here to fly.
 
 I just feel like a lot of effort has been put by both the International Gliding Commission and flight recorder manufacturers, but that these efforts fall short of actually delivering tangible trust into the tracklogs data.
 This is probably sunk-cost fallacy, but I wish the IGC specification recommended cryptographically secure hardware rather than holographic seals and microswitches.
+
+---
+
+I hope this post gave you a better understanding of IGC track signatures, how they're not perfect, but why they are still relevant to prevent casual cheating on online platforms.
