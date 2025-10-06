@@ -244,4 +244,19 @@ Some of the best extracts include:
 
 > The security mechanism [...] must be protected from any interference from outside, such as an attempt to prevent the mechanism from operating while the flight-recorder case is opened such as by inserting a physical probe or tool through ventilation holes, through a partially-removed case cover, or through a gap in a slightly-opened case.
 
+I find it strange that all the mitigation techniques suggested in this specification rely on homemade booby traps, but hardware security modules — which are designed for this exact purpose — are not mentioned.
+
 ## Other hacking techniques
+
+Even if a flight recorder implemented ideal hardware security, it would still miss the elephant in the room: the reliance on GPS to receive positioning data, which is not authenticated.
+
+For a couple hundred bucks, you can [buy a a software-defined radio](https://greatscottgadgets.com/hackrf/) and simulate GPS signals.
+This allows you to craft entire tracklogs while being nearly undetectable, which is much easier to carry out than reverse-engineering using hardware probes.
+
+## Does it really matter ?
+
+No.
+After all, we're here to fly.
+
+I just feel like a lot of effort has been put by both the International Gliding Commission and flight recorder manufacturers, but that these efforts fall short of actually delivering tangible trust into the tracklogs data.
+This is probably sunk-cost fallacy, but I wish the IGC specification recommended cryptographically secure hardware rather than holographic seals and microswitches.
