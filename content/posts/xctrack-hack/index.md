@@ -1,6 +1,5 @@
 ---
-date: 2025-10-04T00:37:23+02:00
-draft: true
+date: 2025-10-09T17:00:00+02:00
 title: The Day I Hacked XCTrack
 summary: A tale of trust and public-key cryptography.
 cover: digital_signature_inverted.png
