@@ -31,15 +31,15 @@ This is going to be a nerdy post, so buckle up.
 ## The IGC file format
 
 In paragliding, the IGC file format is the current standard for storing and exchanging flight information.
-This is what most flight recorders are configured to write, and what Syrac uses to score tracklogs on tasks.
+This is what most flight recorders are configured to output, and what Syrac uses to score tracklogs on tasks.
 
-IGC files are plain text files containing timestamped coordinates, along with other flight metadata.
+IGC files are plain text files containing timestamped coordinates, along with flight metadata.
 The first character of each line indicates the type of record stored in that line:
 
 - `H`: header records storing metadata such as date, pilot name and glider model
 - `B`: fix records storing coordinates of the flight
-- `G`: security record storing the digital track signature
-- [a lot of other record types](https://xp-soaring.github.io/igc_file_format/igc_format_2008.html), which are not relevant to this post
+- `G`: security records storing the digital track signature
+- [other record types](https://xp-soaring.github.io/igc_file_format/igc_format_2008.html), which are not relevant to this post
 
 You can modify a text file simply by opening it in a file editor, so what's preventing malicious users from cheating online contests by crafting arbitrary tracklogs ?
 
@@ -57,7 +57,7 @@ So, how do they work ?
 ## Public-key cryptography
 
 If you're already familiar with hashing and public-key cryptography concepts, you can skip to the [next section](#in-practice).
-Otherwise, this section briefly explains the two core concepts required to understand the underlying mechanics of how track signatures work.
+Otherwise, this section tries to briefly explain the two core concepts required to understand the underlying mechanics of how track signatures work.
 
 ### Hashing
 
@@ -77,7 +77,7 @@ Then, anyone with the public key can verify the signature, confirming that the d
 Once you land, your flight recorder computes a hash of the IGC file contents, and signs it with its private key.
 This signature is appended to the IGC file using `G` records.
 
-To check the validity of a signature, the flight recorder public key can be used to decrypt the encrypted hash, and checking that it matches the hash of the original file contents.
+To check the validity of a signature, the flight recorder public key can be used to verify that it matches the hash of the original file contents.
 
 {{< figure
     src="digital_signature_inverted.png"
@@ -92,7 +92,7 @@ This whole process relies on the computational infeasibility for someone without
 
 ## The hack
 
-So, if the private key is supposed to be a secret, how is the signature of the following (doubtful) IGC file valid ?
+So, if the private key is supposed to be secret, how is the signature of the following (doubtful) IGC file valid ?
 
 ```text
 AXCT XCTrack
@@ -116,10 +116,10 @@ It's not very readable, so I transpiled it to Java — which is not much more re
 
 From this point, it was a reverse-engineering game of figuring out how tracklogs were written, and how security records were appended to it.
 
-Even if function and variable names were obfuscated, the Java classes were not and were pretty much self-explanatory.
+Even if function and variable names were obfuscated, the names of the Java classes were not and were pretty much self-explanatory.
 As soon as I found some `public class TracklogWriter` and a `private RSAPrivateKey`, I was confident I was on the right track.
 
-A couple hours later, I had extracted the private key and built a proof-of-concept to sign arbitrary IGC files.
+A couple hours later, I had extracted the private key and built a proof-of-concept which would allow me to sign arbitrary IGC files.
 
 I contacted XCTrack developers about this issue, and they promptly implemented a more thorough obfuscation of the private key.
 
@@ -228,7 +228,7 @@ XContest team
 {{< /raw >}}
 
 And that was it.
-The key was never revoked, and I get it — it would be a mess and it's not worth the trouble, since I'm not going to publish it anywhere.
+The key was never revoked, and I get it — it would be a mess and it's not worth the trouble, since I'm not going to publish it anywhere. It's just hidden in a more obfuscated way in the app, which makes it a bit harder to extract.
 
 ## Other manufacturers
 
@@ -250,7 +250,7 @@ Some of the best extracts include:
 
 > If a flight recorder is opened or otherwise interfered with either physically or electronically, a mechanism must exist so that any subsequent data from that flight recorder will be detected as not having the correct Digital Signature. This shall be achieved by a system that operates if the flight recorder case is interfered with and deletes the encryption key(s) required to compute a valid digital signature, such as through a microswitch, or equivalent system [...].
 
-> The security mechanism [...] must be protected from any interference from outside, such as an attempt to prevent the mechanism from operating while the flight-recorder case is opened such as by inserting a physical probe or tool through ventilation holes, through a partially-removed case cover, or through a gap in a slightly-opened case.
+> The security mechanism [...] must be protected from any interference from outside, such as an attempt to prevent the mechanism from operating while the flight recorder case is opened such as by inserting a physical probe or tool through ventilation holes, through a partially-removed case cover, or through a gap in a slightly-opened case.
 
 I find it strange that all the mitigation techniques suggested in this specification rely on homemade booby traps, but hardware security modules — which are designed for this exact purpose — are not mentioned.
 
@@ -258,7 +258,7 @@ I find it strange that all the mitigation techniques suggested in this specifica
 
 Even if a flight recorder implemented ideal hardware security, it would still miss the elephant in the room: the reliance on [GPS](https://ciechanow.ski/gps/) to receive positioning data, which is not authenticated.
 
-For a couple hundred bucks, you can [buy a a software-defined radio](https://greatscottgadgets.com/hackrf/) and simulate GPS signals.
+For a couple hundred bucks, you can [buy a software-defined radio](https://greatscottgadgets.com/hackrf/) and simulate GPS signals.
 This allows you to craft entire tracklogs while being nearly undetectable, which is much easier to carry out than reverse-engineering using hardware probes.
 
 ## Does it really matter ?
@@ -269,6 +269,21 @@ After all, we're here to fly.
 I just feel like a lot of effort has been put by both the International Gliding Commission and flight recorder manufacturers, but that these efforts fall short of actually delivering tangible trust into the tracklogs data.
 This is probably sunk-cost fallacy, but I wish the IGC specification recommended cryptographically secure hardware rather than holographic seals and microswitches.
 
----
+## Conclusion
+
+When you submit a track which completes a task on Syrac, it is added to a validation queue and appears with the
+{{< raw >}}
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="oklch(71.526% 0.1356 56.892)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-question-mark-icon lucide-shield-question-mark"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="M9.1 9a3 3 0 0 1 5.82 1c0 2-3 3-3 3"/><path d="M12 17h.01"/></svg>
+{{< /raw >}}
+symbol on the leaderboards.
+Once the signature is verified, the
+{{< raw >}}
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="oklch(0.6231 0.188 259.8145)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check-icon lucide-shield-check"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+{{< /raw >}}
+symbol is displayed if it is valid, and
+{{< raw >}}
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="oklch(0.6368 0.2078 25.3313)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-x-icon lucide-shield-x"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m14.5 9.5-5 5"/><path d="m9.5 9.5 5 5"/></svg>
+{{< /raw >}}
+is used otherwise.
 
 I hope this post gave you a better understanding of IGC track signatures, how they're not perfect, but why they are still relevant to prevent casual cheating on online platforms.
