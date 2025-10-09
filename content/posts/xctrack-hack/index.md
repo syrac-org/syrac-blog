@@ -129,7 +129,7 @@ I contacted XCTrack developers about this issue, and they promptly implemented a
 
 ```text
 ┌──────────────────────────────────────────┐
-│ From: Téo Bouvard <teobouvard@gmail.com> │
+│ From: Syrac <hello@syrac.org>            │
 │ To: XCTRACK <xctrack@xcontest.org>       │
 │ Date: Mon, 16 Nov 2020 11:18:00 +0100    │
 │ Subject: XCTrack security issue          │
@@ -148,18 +148,18 @@ issue you would be willing to work on?
 You can find attached a crafted track passing validation to prove this claim.
 
 Sincerely,
-Téo Bouvard
+Syrac team
 
 [Attachment: crafted_signed.igc (1K)]
 
 ┌────────────────────────────────────────┐
 │ From: XCTRACK <xctrack@xcontest.org>   │
-│ To: Téo Bouvard <teobouvard@gmail.com> │
+│ To: Syrac <hello@syrac.org>            │
 │ Date: Mon, 16 Nov 2020 14:20:00 +0100  │
 │ Subject: Re: XCTrack security issue    │
 └────────────────────────────────────────┘
 
-Hi Teo,
+Hi,
 
 thanks for pointing this out. We're aware of this issue from the beginning
 of the XCTrack. But you're right, nowadays it's easier to dig the key out.
@@ -171,12 +171,12 @@ XContest team
 
 ┌────────────────────────────────────────┐
 │ From: XCTRACK <xctrack@xcontest.org>   │
-│ To: Téo Bouvard <teobouvard@gmail.com> │
+│ To: Syrac <hello@syrac.org>            │
 │ Date: Mon, 23 Nov 2020 12:31:00 +0100  │
 │ Subject: Re: XCTrack security issue    │
 └────────────────────────────────────────┘
 
-Hi Téo,
+Hi,
 
 could you please take a look at this apk?
 
@@ -190,13 +190,13 @@ XContest team
 [Attachment: crafted_signed.apk (13.3M)]
 
 ┌──────────────────────────────────────────┐
-│ From: Téo Bouvard <teobouvard@gmail.com> │
+│ From: Syrac <hello@syrac.org>            │
 │ To: XCTRACK <xctrack@xcontest.org>       │
 │ Date: Mon, 23 Nov 2020 18:23:00 +0100    │
 │ Subject: Re: XCTrack security issue      │
 └──────────────────────────────────────────┘
 
-Hi ****,
+Hi,
 
 At first sight, this seems a reasonable fix. I think the effort needed to
 retrieve the key in this apk can dissuade casual cheating.
@@ -204,16 +204,16 @@ retrieve the key in this apk can dissuade casual cheating.
 Thank you for acting quickly on this.
 
 Cheers,
-Téo
+Syrac team
 
 ┌────────────────────────────────────────┐
 │ From: XCTRACK <xctrack@xcontest.org>   │
-│ To: Téo Bouvard <teobouvard@gmail.com> │
+│ To: Syrac <hello@syrac.org>            │
 │ Date: Tue, 24 Nov 2020 11:27:00 +0100  │
 │ Subject: Re: XCTrack security issue    │
 └────────────────────────────────────────┘
 
-Hi Teo,
+Hi,
 
 great, thanks! (And for pointing this out too.) Next versions will be
 released like this.
