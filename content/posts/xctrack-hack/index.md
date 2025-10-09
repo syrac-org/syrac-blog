@@ -24,7 +24,7 @@ In the [previous blog post](../2025/september-update/), I mentioned a new featur
 {{< /raw >}}
 
 There were a few questions about what these icons meant.
-In this post, I'll explain what they are and how they're related to the day I hacked XCTrack.
+In this post, I'll explain what they are and how they're related to the day I hacked [XCTrack](https://xctrack.org/).
 This is going to be a nerdy post, so buckle up.
 
 ## The IGC file format
