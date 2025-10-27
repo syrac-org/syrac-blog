@@ -5,6 +5,7 @@ title: 2025 October Update
 summary: Track preview, editor improvements, and more.
 tags:
   - updates
+cover: terrain.png
 ---
 
 ## Track preview
