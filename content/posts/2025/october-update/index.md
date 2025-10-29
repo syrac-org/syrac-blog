@@ -1,5 +1,5 @@
 ---
-date: 2025-10-30T16:00:00+01:00
+date: 2025-10-29T16:00:00+01:00
 title: 2025 October Update
 summary: Track preview, editor improvements, and more.
 tags:
