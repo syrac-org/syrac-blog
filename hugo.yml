@@ -17,6 +17,7 @@ params:
   contentTypeName: posts
   footerText: paragliding time attack
   appUrl: https://app.syrac.org
+  ogImage: https://syrac.org/banner.png
   logo:
     logoText: Syrac
     logoHomeLink: /

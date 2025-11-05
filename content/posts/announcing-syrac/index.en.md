@@ -4,7 +4,7 @@ title: Announcing Syrac
 summary: A paragliding time attack platform.
 tags:
   - updates
-cover: https://blog.syrac.org/og-image.png
+cover: https://syrac.org/banner.png
 ---
 
 ## TL;DR
