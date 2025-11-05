@@ -1,7 +1,7 @@
 baseURL: https://blog.syrac.org/
 languageCode: en-us
 title: Syrac | Blog
-copyright: Syrac
+copyright: Patisson Labs
 
 markup:
   highlight:
