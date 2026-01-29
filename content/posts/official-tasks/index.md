@@ -5,6 +5,7 @@ title: Introducing Official Tasks
 summary: Kickstarting official tasks with the manufacturer's league.
 # The recommended image ratio for a cover image is 1.91:1.
 # The optimal size is 1200 x 630.
+cover: https://syrac-media.s3.eu-central-003.backblazeb2.com/manufacturers_league.png
 ---
 
 # Introducing official tasks
@@ -12,14 +13,10 @@ summary: Kickstarting official tasks with the manufacturer's league.
 The 2026 season starts with a challenge.
 
 We've invited some of paragliding's major brands to design official tasks on Syrac.
-These tasks are suitable for pilots of all experience levels, whether you're aiming for the top of the leaderboards or just want to have fun.
+Whether you’re chasing the top of the leaderboard or just flying for fun, these tasks are open to everyone.
 
-Welcome to the manufacturers league, which will run until December 31st, 2026.
+Welcome to the manufacturers league, which will run until February 1st, 2027.
 No entry fee. Everyone's invited.
-
-## Advance (TBC)
-
-## Ascendant (TBC)
 
 ## Nervures
 
@@ -27,8 +24,16 @@ No entry fee. Everyone's invited.
 
 TODO Add task screenshots.
 
-## Niviuk (TBC)
+## Niviuk
+
+TODO
 
 ## Ozone
 
-**Where the fast kids play.** [Ozone](https://flyozone.com/) didn't mess around. Their [Gourdon task](https://app.syrac.org/task/7b2fe0d3-882d-43d3-a779-1ddffc5691af) runs straight through their R&D testing grounds—the same place where they push their wings to the limit. Speed's the name of the game here. Can you keep up?
+**Where the fast kids play.** [Ozone](https://flyozone.com/) didn't mess around. Their two [Gourdon](https://app.syrac.org/task/7b2fe0d3-882d-43d3-a779-1ddffc5691af) [tasks](https://app.syrac.org/task/cc444183-4942-41e9-9735-5b3bbcc91d2a) run straight through their R&D testing grounds—the same place where they push their wings to the limit. Speed's the name of the game here. Can you keep up?
+
+## And You?
+
+Are you a manufacturer and want to be part of the league ?
+Submit your task(s) and reach out at [contact@syrac.org](mailto:contact@syrac.org).
+Applications close on February 15th, 2026.
