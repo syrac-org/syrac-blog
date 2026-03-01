@@ -1,6 +1,5 @@
 ---
-date: 2026-01-19T13:22:25+01:00
-draft: true
+date: 2026-03-01T19:00:00+01:00
 title: Introducing Official Tasks
 summary: Kickstarting official tasks with the manufacturer's league.
 # The recommended image ratio for a cover image is 1.91:1.
@@ -26,7 +25,7 @@ No entry fee. Everyone's invited.
 
 ## Niviuk
 
-**Versatility across borders.** [Niviuk](https://niviuk.com/) tests your adaptability across completely different landscapes. With two [alpine](https://app.syrac.org/task/24a4c05c-c45c-4a52-98af-0c3f8f2cf821) [tasks](https://app.syrac.org/task/9b860061-c0f0-46ca-8e94-92de566feec9) around their R&D office in Switzerland, and a third [one](https://app.syrac.org/task/53d20c70-8363-4750-a844-14a95e6378ee) near their Spanish office, they are delivering a diverse challenge that demands both technical skills and speed management.
+**Versatility across borders.** [Niviuk](https://niviuk.com/) tests your adaptability across completely different landscapes. With two [alpine](https://app.syrac.org/task/24a4c05c-c45c-4a52-98af-0c3f8f2cf821) [tasks](https://app.syrac.org/task/9b860061-c0f0-46ca-8e94-92de566feec9) around their R&D office in Switzerland, and a third [one](https://app.syrac.org/task/53d20c70-8363-4750-a844-14a95e6378ee) near their Spanish office, they are delivering a diverse challenge that demands both technical skills and good speed management.
 
 {{< image src="https://syrac-media.s3.eu-central-003.backblazeb2.com/2026_manufacturer_league_niviuk.png" alt="Niviuk submission for the manufacturer's league" style="border: hidden" >}}
 
